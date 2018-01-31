@@ -1,0 +1,66 @@
+<view class="userinfo">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+      <text  type="text" name="name">姓名:  {{name}}</text>
+    </view>
+    <view class="section">
+    <view wx:if="{{types==2}}" >
+          <text  type="text" name="type">类型: 出差 </text>
+        </view>
+        <view wx:elif="{{types==1}}" >
+          <text  type="text" name="type">类型:  请假</text>
+        </view>
+    </view>
+    <view class="sectionhide {{types==2?'sectionshow':''}}">
+      <text type="text" name="address"  />出差地点:  {{address}}
+    </view>
+    <view class="section">
+      <text  type="text" name="name">开始时间:  {{st}}</text>
+    </view>
+    <view class="section">
+      <text  type="text" name="name">结束时间:  {{et}}</text>
+    </view>
+    
+    <view class="section">
+     <text  type="text" name="name">时长:  {{timelong}}</text>
+    </view>
+    <view class="section">
+      <text  type="text" >事由:  {{reson}}</text>
+    </view>
+    <view class="section">
+     <view wx:if="{{fristresult==1}}" >
+       <text  type="text">审核人一  :  {{fristcheckname}}  (已通过)
+       </text>
+       </view>
+       <view wx:elif="{{fristresult==0}}" >
+       <text  type="text"  >审核人一  :  {{fristcheckname}}  (未审核)
+       </text>
+       </view>
+       <view wx:elif="{{fristresult==2}}" >
+       <text  type="text" >审核人一  :  {{fristcheckname}}  (拒绝)
+       </text>
+       </view>
+    </view>
+    <view class="section">
+       <view wx:if="{{secondname!=null&&secondresult==1}}" >
+       <text  type="text">审核人二  :  {{secondname}}  (已通过)
+       </text>
+       </view>
+        <view wx:elif="{{secondname!=null&&secondresult==2}}" >
+       <text  type="text">审核人二  :  {{secondname}}  (拒绝)
+       </text>
+       </view>
+
+        <view wx:elif="{{secondname!=null&&(secondresult==0||secondresult==null)}}" >
+       <text  type="text">审核人二  :  {{secondname}}  (未审核)
+       </text>
+       </view>
+
+    </view>
+    
+   
+    <view class="btn-area">
+      <button bindtap="formSubmit">确定</button>
+    </view>
+  </form>
+</view>

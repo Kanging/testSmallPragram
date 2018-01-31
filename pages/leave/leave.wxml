@@ -1,0 +1,67 @@
+<view class="userinfo">
+  <form bindsubmit="formSubmit" bindreset="formReset" report-submit = "true">
+    <view class="section">
+      <text  type="text" name="name">姓名:{{userData.data.user_name}}</text>
+    </view>
+    <view class="section">
+      <text  type="text" name="type">类型:  </text>
+      <radio-group bindchange="radioChange">
+      <label wx:for="{{typeitems}}" wx:key='item.name'>
+      <radio value='{{item.name}}' checked='{{item.checked}}'>{{item.value}}
+      </radio>
+      </label>
+      </radio-group>
+    </view>
+    <view class="sectionhide {{showView?'sectionshow':''}}">
+      <input type="text" name="address" placeholder="出差地点" />
+    </view>
+    <view class="section">
+      <picker mode="date" value="{{dates}}" start="2015-01-01" bindchange="bindDateChange">
+        <view class="picker">
+          开始日期：{{dates}} 
+          <input hidden="true" name="datestart" value="{{dates}} "/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">
+          开始时间：{{times}}
+          <input hidden="true" name="timestart" value="{{times}} "/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="date" value="{{datee}}" start="2015-01-01" bindchange="bindDateChangeEnd">
+        <view class="picker">
+          结束日期：{{datee}} 
+          <input hidden="true" name="dateend" value="{{datee}} "/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChangeEnd">
+        <view class="picker">
+          结束时间：{{timee}}
+          <input hidden="true" name="timee" value="{{timee}} "/>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <input type="number" class="ww" name="timelong" placeholder="时长" />
+    </view>
+    <view class="section">
+       <text  type="text" name="fristCheckName" bindtap='gosearch1'>审核人:{{fristCheckName}}</text>
+    </view>
+    <view class="section">
+      <text  type="text" name="fristCheckName" bindtap='gosearch2'>审核人:{{secondCheckName}}</text>
+    </view>
+    <view class="section">
+      <input type="text" class="ww" name="reson" placeholder="请输入事由" />
+    </view>
+   
+    <view class="btn-area">
+      <button formType="submit">提交</button>
+    </view>
+  </form>
+</view>

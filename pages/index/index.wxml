@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userData.data.department_name}} {{userData.data.user_name}}</text>
+  </view>
+  <view class="usermotto">
+    <view class="flex-row flex-cell">
+    <button class="flex-cell flex-row" bindtap='goActicity1'>请假</button>
+    <button class="flex-cell flex-row" bindtap='goActicity2'>出差</button>
+  </view>
+  <view class="flex-row flex-cell">
+    <button class="flex-cell flex-row" bindtap='goMyleaveList'>已申请</button>
+    <button class="flex-cell flex-row">已处理</button>
+  </view>
+  <view class="flex-row flex-cell">
+    <button class="flex-cell flex-row" bindtap='waithandle'>待处理</button>
+    <button class="flex-cell flex-row">月汇总</button>
+  </view>
+  </view>
+</view>

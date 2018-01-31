@@ -1,0 +1,28 @@
+{
+  "pages": [
+      "pages/welcome/welcome",
+    "pages/waithandle/waithandle",
+    "pages/waithandleinfo/waithandleinfo",
+    "pages/register/register",
+    "pages/myleavelist/myleavelist",
+    "pages/myleaveitem/myleaveitem",
+    "pages/getall/getall",
+    
+   
+    "pages/leave/leave",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/login/login"
+   
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "Hello SmallProgram",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#000000"
+  },
+ 
+  "debug": true
+}

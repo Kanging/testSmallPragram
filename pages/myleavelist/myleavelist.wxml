@@ -1,0 +1,29 @@
+<view class="search">
+  <view class="search-bar">
+    <view class="search-wrap">
+      <icon type="search" size="16" class="icon-search" />
+      <input type="text" placeholder="请输入搜索内容" class="search-input" name="searchKeyword" bindinput="bindKeywordInput" value="{{searchKeyword}}" />
+    </view>
+    <view class="search-cancel" bindtap="keywordSearch">搜索</view>
+  </view>
+  <view class="search-result">
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+      <view class="result-item" wx:for="{{searchSongList}}" wx:key="{{item.activity_id}}" data-data="{{item}}" bindtap='placeChoose'>
+      <view class="icon{{item.isonly=='0' ? ' nocopyright' : ''}}"></view>  
+        <view wx:if="{{item.activity_type==2}}">
+          <text class="title">出差</text>
+        </view>
+        <view wx:elif="{{item.activity_type==1}}">
+          <text class="title">请假</text>
+        </view>
+        <view class="subtitle">
+          <text>{{item.activity_st}} 至 {{item.activity_et}}</text>
+
+        </view>
+
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+  </view>
+</view>
